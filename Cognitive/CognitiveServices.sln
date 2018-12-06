@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CognitiveServices", "CognitiveServices\CognitiveServices.csproj", "{974776DD-FADA-4744-B646-BBFC71036801}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bing", "Bing\Bing.csproj", "{E44BF812-34EA-498B-BF0C-CCD4E5303CF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureSearch", "AzureSearch\AzureSearch.csproj", "{73DB597E-B1C0-4AF4-93D0-7C44BA4A5B55}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{974776DD-FADA-4744-B646-BBFC71036801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{974776DD-FADA-4744-B646-BBFC71036801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{974776DD-FADA-4744-B646-BBFC71036801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{974776DD-FADA-4744-B646-BBFC71036801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E44BF812-34EA-498B-BF0C-CCD4E5303CF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E44BF812-34EA-498B-BF0C-CCD4E5303CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E44BF812-34EA-498B-BF0C-CCD4E5303CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E44BF812-34EA-498B-BF0C-CCD4E5303CF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73DB597E-B1C0-4AF4-93D0-7C44BA4A5B55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73DB597E-B1C0-4AF4-93D0-7C44BA4A5B55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73DB597E-B1C0-4AF4-93D0-7C44BA4A5B55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73DB597E-B1C0-4AF4-93D0-7C44BA4A5B55}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3155D43-BAAF-4156-B8CE-D870D806EEFF}
+	EndGlobalSection
+EndGlobal
