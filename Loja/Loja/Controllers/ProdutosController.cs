@@ -1,5 +1,7 @@
-﻿using Loja.Core.Models;
+﻿using AutoMapper;
+using Loja.Core.Models;
 using Loja.Core.Services;
+using Loja.Core.ViewModels;
 using Loja.Infrastructure.Storage;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,10 +16,12 @@ namespace Loja.Controllers
     public class ProdutosController : Controller
     {
         private readonly IProdutoServices _produtoServices;
+        private readonly IMapper _mapper;
 
-        public ProdutosController(IProdutoServices produtoServices)
+        public ProdutosController(IProdutoServices produtoServices, IMapper mapper)
         {
             _produtoServices = produtoServices;
+            _mapper = mapper;
         }
 
         public IActionResult Create()
@@ -49,7 +53,10 @@ namespace Loja.Controllers
 
         public async Task<IActionResult> List()
         {
-            return Json(await _produtoServices.ObterProdutos());
+            var produtos = await _produtoServices.ObterProdutos();
+            var vm = _mapper.Map<List<ProdutoViewModel>>(produtos);
+
+            return View(vm);
         }
     }
 }

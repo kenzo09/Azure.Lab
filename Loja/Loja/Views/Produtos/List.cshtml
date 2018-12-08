@@ -1,0 +1,53 @@
+﻿@model System.Collections.Generic.List<Loja.Core.ViewModels.ProdutoViewModel>
+
+@{
+    ViewData["Title"] = "Listagem";
+}
+
+<div class="row">
+    @foreach (var produto in Model)
+    {
+        <div class="col-md-3">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <a href='@Url.Action("Details", "Produtos", new { Id = produto.Id})'>
+                        <h2>@produto.Nome</h2>
+
+                        <img src="@produto.ImagemUrl" class="img-thumbnail" />
+                    </a>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            R$ @produto.Preco
+                        </div>
+
+                        <div class="col-md-6">
+                            <button class="btn btn-success" data-id="@produto.Id">
+                                Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts{
+    <script>
+        $(function () {
+            $(".btn-sucess").each(function () {
+                var btn = $(this);
+                btn.click(function () {
+                    var id = btn.data("id");
+
+                    $.post("/Carrinho/Add", { id }, function (data) {
+                        $(".carrinho-placeholder").html(data);
+                    });
+                });
+            });
+        });
+    </script>
+}

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Loja.Core.Services;
+using Loja.Infrastructure.Mappings;
 using Loja.Infrastructure.Redis;
 using Loja.Infrastructure.Storage;
 using Microsoft.AspNetCore.Authentication;
@@ -37,6 +39,9 @@ namespace Loja
             services.AddScoped<IProdutoServices, ProdutoServices>();
             services.AddScoped<IAzureStorage, AzureStorage>();
 
+            Mapper.Initialize(c => c.AddProfile<ProdutoProfile>());
+
+            services.AddAutoMapper();
             services.AddMvc();
         }
 
