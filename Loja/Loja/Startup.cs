@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Loja.Core.Services;
+using Loja.Infrastructure.Redis;
+using Loja.Infrastructure.Storage;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.AzureAD.UI;
 using Microsoft.AspNetCore.Builder;
@@ -29,6 +32,10 @@ namespace Loja
             services
                 .AddAuthentication(AzureADDefaults.AuthenticationScheme)
                 .AddAzureAD(c => Configuration.Bind("AzureAd", c));
+
+            services.AddSingleton<IRedisCache, RedisCache>();
+            services.AddScoped<IProdutoServices, ProdutoServices>();
+            services.AddScoped<IAzureStorage, AzureStorage>();
 
             services.AddMvc();
         }
