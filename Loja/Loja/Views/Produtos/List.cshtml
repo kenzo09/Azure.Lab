@@ -7,10 +7,11 @@
 <div class="row">
     @foreach (var produto in Model)
     {
+        @if (produto == null) { continue; }
         <div class="col-md-3">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <a href='@Url.Action("Details", "Produtos", new { Id = produto.Id})'>
+                    <a href='@Url.Action("Details", "Produtos", new { Id = produto.Id })'>
                         <h2>@produto.Nome</h2>
 
                         <img src="@produto.ImagemUrl" class="img-thumbnail" />
@@ -35,15 +36,15 @@
     }
 </div>
 
-@section Scripts{
+@section Scripts {
     <script>
         $(function () {
-            $(".btn-sucess").each(function () {
+            $(".btn-success").each(function () {
                 var btn = $(this);
                 btn.click(function () {
                     var id = btn.data("id");
 
-                    $.post("/Carrinho/Add", { id }, function (data) {
+                    $.post("/Carrinho/Add", { id: id }, function (data) {
                         $(".carrinho-placeholder").html(data);
                     });
                 });

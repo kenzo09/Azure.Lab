@@ -36,5 +36,10 @@ namespace Loja.Core.Services
 
             return JsonConvert.DeserializeObject<List<Produto>>(value);
         }
+
+        public async Task<Produto> ObterProduto(int id)
+        {
+            return await _storage.ObterProduto(id);
+        }
     }
 }

@@ -58,5 +58,11 @@ namespace Loja.Controllers
 
             return View(vm);
         }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var produto = await _produtoServices.ObterProduto(id);
+            return Json(produto);
+        }
     }
 }

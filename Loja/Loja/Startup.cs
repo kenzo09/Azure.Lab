@@ -36,6 +36,7 @@ namespace Loja
                 .AddAzureAD(c => Configuration.Bind("AzureAd", c));
 
             services.AddSingleton<IRedisCache, RedisCache>();
+            services.AddScoped<ICarrinhoService, CarrinhoService>();
             services.AddScoped<IProdutoServices, ProdutoServices>();
             services.AddScoped<IAzureStorage, AzureStorage>();
 
